@@ -34,5 +34,6 @@ class AircraftInventory:
             raise ValueError("在庫不足です")
         self.items[name] -= quantity
 
+    def get_stock(self, name):
+        return self.items[name]
 
-        
