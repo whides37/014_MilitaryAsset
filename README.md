@@ -80,5 +80,3 @@ battleship.py
 
 add/remove は「操作」
 get_stock は「参照」
-
----
