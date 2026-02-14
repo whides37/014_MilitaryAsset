@@ -71,7 +71,7 @@ battleship.py
 
 ---
 
-### 間違いをAIに直してもらったところ
+### 間違いをAIに直してもらったところ1(仕様書段階)
 
 > 在庫メソッドget_stock(name)
 > 在庫増減を「追加、取り出し」から継承して書く。
@@ -80,3 +80,9 @@ battleship.py
 
 add/remove は「操作」
 get_stock は「参照」
+
+## 間違いをAIに直してもらったところ2（構文：辞書の追加）
+×
+self.items += items
+〇
+self.items[name] = quantity
