@@ -24,7 +24,7 @@ class MilitaryAssetInventory:
             raise TypeError("追加数は数値で入力してください")
         if quantitiy <= 0:
             raise ValueError("数値は１以上で入力してください")
-        if name in self.items:
+        if name not in self.items:
             raise KeyError("登録がありません")
         else:
             self.items[name] -= quantitiy
