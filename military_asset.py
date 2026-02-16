@@ -15,11 +15,6 @@ class MilitaryAssetInventory:
             self.items[name] += quantitiy
         else:
             self.items[name] = quantitiy
-            self._after_update()
-
-    #更新が終わったあとに追加処理＝更新後になにかあるかもよ
-    def _after_update(self):
-            pass #なにもしない
 
     #削除メソッド
     def remove_item(self,name,quantitiy):

@@ -19,9 +19,5 @@ class AircraftInventry(MilitaryAssetInventory):
 
     #継承
     def add_item(self,name,quantitiy):
-        super().add_item(name,quantitiy)
-        self.save_data()
-
-    #更新が終わったあとに追加処理＝更新後になにかあるかもよ
-    def _after_update(self):
-            self.save_data()
+        super().add_item(name,quantitiy)#リストの更新
+        self.save_data()#更新されたリストの保存
