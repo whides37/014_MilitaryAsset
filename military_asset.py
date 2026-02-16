@@ -16,10 +16,10 @@ class MilitaryAssetInventory:
         else:
             self.items[name] = quantitiy
             self._after_update()
-            
-    #なにかあるかもよ
+
+    #更新が終わったあとに追加処理＝更新後になにかあるかもよ
     def _after_update(self):
-            pass
+            pass #なにもしない
 
     #削除メソッド
     def remove_item(self,name,quantitiy):
@@ -34,7 +34,6 @@ class MilitaryAssetInventory:
         else:
             self.items[name] -= quantitiy
 
-
     #在庫表示
     def get_stock(self,name):
         return self.items[name]
@@ -43,5 +42,5 @@ class MilitaryAssetInventory:
     def __str__(self):
         result = "=== 在庫一覧 ===\n"
         for name ,stock in self.items.items():
-            result += f"{name}:{stock:>2}\n"
+            result += f"{name}:{stock:>3}\n"
         return result
