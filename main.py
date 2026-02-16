@@ -1,16 +1,12 @@
 #aircraft.pyからAircraftInventoryクラスをもってくる
-from aircraft import AircraftInventory
+from aircraft import AircraftInventry
 
-inventry = AircraftInventory()
+#継承
+inventry = AircraftInventry()
 
-try:
-    inventry.add_item("A6M 零戦",10)
-    inventry.remove_item("J7W 震電",10)
-except ValueError as e :
-    print("値エラー:",e)
-except KeyError as e :
-    print("キーエラー:",e)
-except TypeError as e :
-    print("型エラー:",e)
+inventry.add_item("A6M 零戦",10)
+inventry.add_item("J7W 震電",2)
+inventry.add_item("J1N 月光",1)
+inventry.add_item("A7M 烈風",3)
 
 print(inventry)

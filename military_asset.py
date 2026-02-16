@@ -17,7 +17,7 @@ class MilitaryAssetInventory:
             self.items[name] = quantitiy
 
     #削除メソッド
-    def add_item(self,name,quantitiy):
+    def remove_item(self,name,quantitiy):
         if not isinstance(name,str):
             raise TypeError("名前は文字列で入力してください")
         if not isinstance(quantitiy,int):
@@ -35,7 +35,7 @@ class MilitaryAssetInventory:
     
     #printの設定
     def __str__(self):
-        result = "在庫一覧\n"
+        result = "=== 在庫一覧 ===\n"
         for name ,stock in self.items.items():
-            result += f"{name}:{stock}\n"
+            result += f"{name}:{stock:>2}\n"
         return result
