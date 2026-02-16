@@ -13,11 +13,10 @@ class AircraftInventory:
         if not isinstance(quantity,int):
             raise TypeError("機体数は数値で入力してください")
         if quantity <= 0 :
-            raise ValueError("機体数は0以上の数で入力してください")
-        # 辞書にあるか確認、あれば、そのキーの値を増やしている
+            raise ValueError("機体数は1以上の数で入力してください")
+        # 既に登録済みの機体（キーの値）なら、なければ新規登録
         if name in self.items:
             self.items[name] += quantity
-        # 既に登録済みの機体（キーの値）なら、その在庫数を加算する
         else:
             self.items[name] = quantity
 
