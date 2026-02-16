@@ -64,7 +64,9 @@ self.items = {}
 ## 将来拡張
 domain/
 military_asset.py ← 親クラス 
+
 aircraft.py 
+
 battleship.py
 
 ---
@@ -81,8 +83,9 @@ battleship.py
 add/remove は「操作」
 get_stock は「参照」
 
-## 間違いをAIに直してもらったところ2（構文：辞書の追加）
+### 間違いをAIに直してもらったところ2（構文：辞書の追加）
 ×
 self.items += items
+
 〇
 self.items[name] = quantity
