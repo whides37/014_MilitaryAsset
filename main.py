@@ -1,7 +1,6 @@
 #aircraft.pyからAircraftInventoryクラスをもってくる
 from aircraft import AircraftInventry
 
-#継承
 inventry = AircraftInventry()
 
 inventry.add_item("A6M 零戦",100)
