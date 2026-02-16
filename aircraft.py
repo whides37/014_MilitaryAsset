@@ -47,5 +47,5 @@ class AircraftInventory:
     def __str__(self):
         result = "=== 保有機体リスト ===\n"
         for name ,stock in self.items.items():
-            result += f"{name}:{stock}機\n"
+            result += f"{name}:{stock:>2}機\n"
         return result
