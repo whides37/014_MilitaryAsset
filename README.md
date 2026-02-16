@@ -20,7 +20,7 @@ self.items = {}
 ---
 ## メソッド仕様
 
-### ① add_item(name, quantity)
+### ① 在庫追加/add_item(name, quantity)
 
 #### エラー条件
 
@@ -35,7 +35,7 @@ self.items = {}
 
 ---
 
-### ② remove_item(name, quantity)
+### ② 在庫取り出し/remove_item(name, quantity)
 
 #### エラー条件
 
@@ -50,7 +50,7 @@ self.items = {}
 
 ---
 
-### ③ get_stock(name)
+### ③ 在庫確認/get_stock(name)
 
 #### エラー条件
 
