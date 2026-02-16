@@ -16,6 +16,11 @@ class MilitaryAssetInventory:
         else:
             self.items[name] = quantitiy
 
+            self._after_update()
+
+        def _after_update(self):
+            pass
+
     #削除メソッド
     def remove_item(self,name,quantitiy):
         if not isinstance(name,str):
@@ -28,6 +33,7 @@ class MilitaryAssetInventory:
             raise KeyError("登録がありません")
         else:
             self.items[name] -= quantitiy
+
 
     #在庫表示
     def get_stock(self,name):

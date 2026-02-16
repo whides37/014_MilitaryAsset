@@ -1,11 +1,23 @@
+import json
 from military_asset import MilitaryAssetInventory
 
+#load_data()でJSONデータを開く
 class AircraftInventry(MilitaryAssetInventory):
     def __init__(self):
         super().__init__()  # 親クラスの初期化（items = {}）
-        self.items = {
-            "A6M 零戦": 5,
-            "J7W 震電": 2,
-            "J1N 月光": 1,
-            "A7M 烈風": 3
-        }
+        self.load_data()
+
+    #JSONを辞書に変換
+    def load_data(self):
+        with open("aircraft_data.json","r",encoding="utf-8") as f:
+            self.items = json.load(f)
+    
+    #JSON保存機能追加
+    def save_data(self):
+        with open("aircraft_data.json","w",encoding="utf-8") as f:
+            json.dump(self.items,f,ensure_ascii=False,indent=4)
+
+    #継承
+    def add_item(self,name,quantitiy):
+        super().add_item(name,quantitiy)
+        self.save_data()
