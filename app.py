@@ -48,16 +48,33 @@ if st.button("追加する"):
         st.error(str(e))
 
 # -----------------------------
-# 削除機能
+# 削除機能（数量指定）
 # -----------------------------
-st.subheader("航空機を削除")
+st.subheader("航空機を削除 / 数量を減らす")
 
 if inventry.items:
-    delete_target = st.selectbox("削除する航空機を選択", list(inventry.items.keys()))
+    delete_target = st.selectbox("対象の航空機を選択", list(inventry.items.keys()))
+    max_qty = inventry.items[delete_target]
+
+    del_qty = st.number_input(
+        "削除する数量",
+        min_value=1,
+        max_value=max_qty,
+        step=1
+    )
+
     if st.button("削除する"):
-        del inventry.items[delete_target]
+        # 数量を減らす
+        inventry.items[delete_target] -= int(del_qty)
+
+        # 0 になったら項目ごと削除
+        if inventry.items[delete_target] <= 0:
+            del inventry.items[delete_target]
+            st.warning(f"{delete_target} を全て削除しました")
+        else:
+            st.success(f"{delete_target} を {del_qty} 機削除しました（残り: {inventry.items.get(delete_target, 0)}）")
+
         inventry.save_data()
-        st.warning(f"{delete_target} を削除しました")
         st.experimental_rerun()
 else:
     st.info("削除できる航空機がありません")
