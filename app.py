@@ -4,7 +4,7 @@ from aircraft import AircraftInventry
 # インスタンス生成
 inventry = AircraftInventry()
 
-st.title("✈ 航空機インベントリ管理アプリ（検索機能つき）")
+st.title(" 保有機体管理アプリ（検索機能つき）")
 
 # -----------------------------
 # 検索機能
@@ -75,7 +75,7 @@ if inventry.items:
             st.success(f"{delete_target} を {del_qty} 機削除しました（残り: {inventry.items.get(delete_target, 0)}）")
 
         inventry.save_data()
-        st.experimental_rerun()
+        st.rerun()
 else:
     st.info("削除できる航空機がありません")
 
