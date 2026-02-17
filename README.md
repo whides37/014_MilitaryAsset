@@ -70,6 +70,12 @@ aircraft.py
 battleship.py
 
 ---
+# GUIで確認
+コマンドプロンプトで、下記実行。
+
+   ```bash
+   streamlit run app.py
+   ```
 
 ---
 
