@@ -1,8 +1,9 @@
 import json
 from military_asset import MilitaryAssetInventory
 
-#load_data()でJSONデータを開く
 class AircraftInventry(MilitaryAssetInventory):
+
+    #load_data()でJSONデータを開く
     def __init__(self):
         super().__init__()  # 親クラスの初期化（items = {}）
         self.load_data()
